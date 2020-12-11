@@ -1,0 +1,83 @@
+$form-accent: #ECECEC;
+
+.contact-form {
+  z-index: 10;
+  height: 500px; 
+  width: 400px;
+  margin: 15px 30px;
+  border-radius: 10px;
+  box-shadow: 0 3px 12px rgba(0,0,0,0.3);
+  background-color: var(--white);
+
+  @media only screen and (max-width: 500px) {
+    width: 90vw;
+    margin: 0 auto 30px;
+  }
+
+  .contact-form-header {
+    height: 60px;
+    background-color: $form-accent;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    position: relative;
+    margin-top: -10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .rocket-icon {
+      width: 100%;
+      height: 100%;
+      padding: 10px;
+      color: var(--anchor-color);
+    }
+
+  }
+
+  ul {
+    width: 80%;
+    margin: 20px auto;
+
+    
+    li {
+      margin: 15px auto;
+      width: 100%;
+      
+      label {
+        font-size: 0.7rem;
+        font-weight: 700;
+        display: block;
+        margin-bottom: 4px;
+        color: var(--gray);
+      }
+
+      input, textarea {
+        display: block;
+        width: 100%;
+        border: none;
+        background-color: $form-accent;
+        height: 25px;
+      }
+
+      textarea {
+        height: 100px;
+      }
+
+      .submit-button {
+        margin: 25px auto;
+        width: 100px;
+        height: 30px;
+        display: block;
+        background-color: var(--anchor-color);
+        border: none;
+        color: var(--white);
+        font-size: 0.9rem;
+        font-weight: 700;
+        border-radius: 4px;
+        &:hover {
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,27 @@
+.sign-up-container {
+  height: 50vh;
+  width: 100%;
+  background-color: var(--yellow);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.sign-up-wrapper {
+  p {
+    font-size: 1.5rem;
+    color: var(--gray);
+  }
+
+  h2
+{
+  font-size: 3rem;
+  margin:0;
+  color: var(--gray);
+}
+}
+
+.sign-up-button {
+  background-color: var(--gray);
+}

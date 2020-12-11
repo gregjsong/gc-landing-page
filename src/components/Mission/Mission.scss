@@ -1,0 +1,131 @@
+@mixin colored-box($color, $width) {
+  width: $width;
+  background-color: $color;
+  transform: skew(-30deg);
+  height: 25px;
+  margin: 0;
+} 
+
+.mission {
+  text-align: center;
+  
+  .mission-content {
+    
+    .mission-text {
+      width: 80%;
+      height: 300px;
+      margin: 10% 10% 0px;
+      @media only screen and (max-width: 700px) {
+        height: 500px;
+      }
+      @media only screen and (max-width: 500px) {
+        height: 600px;
+      }
+
+
+      .mission-text-title {
+        color: var(--text-color);
+        font-size: 3.5rem;
+        font-weight: 500;
+        margin-bottom: 30px;
+      }
+      p {
+        color: var(--text-color);
+        font-size: 1.2rem;
+        line-height: 2.5rem;
+      }
+    }
+
+    .accent-box {
+      transform: rotate(0deg);
+      margin-left: -20px;
+      .color-box-1 {
+        @include colored-box(var(--yellow), 30%);
+      }
+
+      .color-box-2 {
+        @include colored-box(var(--light-blue), 45%);
+      }
+    }
+
+    .mission-section-1 {
+      width: 100%;
+      background-color: var(--background-gray);
+      margin-top: 0;
+      padding: 100px 5% 0px;
+      overflow-x: hidden;
+
+      h5 {
+        margin: 0;
+        font-size: 2rem;
+        color: var(--text-color);
+        font-weight: 500;
+        text-align: left;
+
+      }
+      p {
+        text-align: left;
+        font-size: 1.2rem;
+        line-height: 2.0rem;
+        color: var(--text-color);
+        width: 100%;
+        
+      }
+
+      .flex {
+        display: flex;
+        @media only screen and (max-width: 600px) {
+          display: block;
+        }
+
+        p {
+          margin-top: 0;
+        }
+      
+        .analysis-img-1 {
+          margin-top: 30px;
+          margin-left: 5%;
+          max-width: 40%;
+          height: auto;
+          z-index: 3;
+          box-shadow: 0px 10px 10px rgba(0,0,0,0.2);
+          @media only screen and (max-width: 600px) {
+            max-width: 80%;
+            margin-bottom: 30px;
+          }
+        }
+      }
+
+      .colored-circle {
+        width: 400px;
+        height: 400px;
+        background-color: var(--yellow);
+        float: right;
+        position: relative;
+        top: -200px;
+        right: -150px;
+        border-radius: 50%;
+        @media only screen and (max-width: 600px) {
+          display: none;
+        }
+      }
+
+      .colored-triangle {
+        width: 0;
+        height: 0;
+        float: right;
+        position: relative;
+        top: 0px;
+        right: -250px;
+        border-left: 60px solid transparent;
+        border-right: 60px solid transparent;
+        border-bottom: 110px solid var(--text-color);
+        transform: rotate(10deg);
+        @media only screen and (max-width: 600px) {
+          display: none;
+        }
+      }
+    }
+  }
+}
+

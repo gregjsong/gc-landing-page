@@ -1,0 +1,121 @@
+@mixin pricing-card-color($index, $color, $color2) {
+  &.card-#{$index} {
+    background-color: $color2;
+
+    .color-box {
+      background-color: $color;
+    }
+
+    .pricing-card-icon {
+      border: 2px solid var(--white);
+      color: $color;
+      background-color: var(--white);
+    }
+
+    .button-#{$index} {
+      background-color: $color;
+      border-color: $color;
+      border-radius: 20px;
+    }
+  }
+}
+
+.pricing {
+  width: 100%;
+  background-color: var(--background-gray);
+
+  .pricing-container {
+    text-align: center;
+    h4 {
+      font-size: 2.5rem;
+      margin: 100px auto 0 auto;
+      color: var(--gray3);
+    }
+
+    h5 {
+      font-size: 1.8rem;
+      margin-top: 20px;
+      color: var(--gray3);
+    }
+  }
+}
+
+.pricing-cards {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 80px auto;
+  
+  .pricing-card {
+    width: 300px;
+    height: 450px;
+    padding: 0;
+    margin: 20px;
+    box-shadow: 0 10px 10px rgba(0,0,0,0.2);
+    background-color: var(--white);
+    border-radius: 10px;
+
+    @include pricing-card-color(0, var(--gray3), var(--gray));
+    @include pricing-card-color(1, var(--light-blue), var(--anchor-color));
+    @include pricing-card-color(2, var(--red), #800000);
+
+    .color-box {
+      height: 50px;
+      width: 100%;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-top-left-radius: 10px;
+      border-top-right-radius: 10px;
+      position: relative;
+      top: -20px;
+
+      h5.pricing-card-title {
+        margin: 0;
+        color: var(--white);
+        font-size: 1.1rem;
+      }
+    }
+
+    .pricing-card-icon {
+      font-size: 6rem;
+      padding: 10px;
+      margin: 15px;
+      border-radius: 50%;
+      background-color: var(--white);
+    }
+
+    .pricing-card-cost {
+      color: var(--white);
+
+      margin: 0 auto 10px;
+      font-size: 12px;
+      text-align: center;
+      .pricing-card-price {
+        font-size: 2.0rem;
+      }
+    }
+
+    .pricing-card-text {
+      text-align: left;
+      width: 75%;
+      margin: 0 auto 30px;
+      height: 130px;
+
+      li {
+        padding: 6px;
+        color: var(--white);
+        font-size: 14px;
+        font-weight: 700;
+        border-top: 1px solid white;
+
+        &:first-child {
+          border-top: none;
+        }
+      }
+    }
+  }
+}
+

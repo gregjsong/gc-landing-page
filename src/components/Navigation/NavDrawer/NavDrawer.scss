@@ -1,0 +1,73 @@
+.nav-icon {
+  width: 60px;
+  height: 60px;
+  padding: 15px 10px;
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  & > div {
+    width: 25px;
+    height: 2px;
+    margin: 5px;
+    background-color: var(--anchor-color);
+  }
+}
+
+.nav-sidebar {
+  display: none;
+  flex-direction: column;
+  position: fixed;
+  width: 250px;
+  height: 100vh;
+  background-color: var(--background-gray);
+  left: 100vw;
+  display: flex;
+  box-shadow: -3px 3px 5px rgba(0,0,0,0.2);
+
+  &.show {
+    transform: translateX(-250px);
+    animation-name: slidein;
+    animation-duration: 1s;
+
+
+  }
+
+  &.hide {
+    // transform: translateX(0vw);
+    animation-name: slideout;
+    animation-duration: 1s;
+
+  }
+  
+
+  .nav-item {
+    width: 95%;
+    margin: 5px auto;
+    font-size: 1.2rem;
+    border-bottom: 1px solid var(--anchor-color);
+    color: var(--anchor-color);
+    font-weight: 500;
+  }
+}
+
+@keyframes slidein {
+  from {
+    transform: translateX(0px);
+  }
+
+  to {
+    transform: translateX(-250px);
+  }
+}
+
+@keyframes slideout {
+  from {
+    transform: translateX(-250px);
+  }
+
+  to {
+    transform: translateX(0px);
+  }
+}
